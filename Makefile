@@ -30,6 +30,7 @@ SRCS =	ft_toupper.c \
 		ft_bzero.c \
 		ft_atoi.c \
 		ft_itoa.c \
+		ft_strmapi.c \
 
 OBJ = $(SRCS:.c=.o)
 
