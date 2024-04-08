@@ -29,6 +29,7 @@ SRCS =	ft_toupper.c \
 		ft_calloc.c \
 		ft_bzero.c \
 		ft_atoi.c \
+		ft_itoa.c \
 
 OBJ = $(SRCS:.c=.o)
 
