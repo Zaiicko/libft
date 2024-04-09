@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 21:51:49 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/04/07 17:43:40 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/04/09 19:19:07 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)(s + i));
 	while (i >= 0)
 	{
-		if (s[i] == c)
+		if (((unsigned char *)s)[i] == (unsigned char)c)
 			return ((char *)(s + i));
 		i--;
 	}
