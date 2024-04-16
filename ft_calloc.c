@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 22:38:09 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/04/08 22:40:17 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/04/15 20:00:04 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,14 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*dest;
+	size_t	temp;
 
+	if (count != 0 && size != 0)
+	{
+		temp = count * size;
+		if ((temp / count) != size)
+			return (NULL);
+	}
 	dest = (void *)malloc(count * size);
 	if (!dest)
 		return (NULL);

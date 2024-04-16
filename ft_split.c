@@ -3,18 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 22:25:52 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/04/01 01:46:24 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/04/13 17:48:18 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_free_tab(char **tab)
+static int	next_word(char const *str, char c, int i)
 {
-	size_t	i;
+	while (str[i] && str[i] == c)
+		i++;
+	return (i);
+}
+
+static int	next_sep(char const *str, char c, int i)
+{
+	while (str[i] && str[i] != c)
+		i++;
+	return (i);
+}
+
+static char	**ft_free_tab(char **tab)
+{
+	int	i;
 
 	i = 0;
 	while (tab[i])
@@ -23,6 +37,7 @@ static void	ft_free_tab(char **tab)
 		i++;
 	}
 	free(tab);
+	return (NULL);
 }
 
 static	size_t	ft_word_count(char const *s, char c)
@@ -44,50 +59,30 @@ static	size_t	ft_word_count(char const *s, char c)
 	return (j);
 }
 
-static void	ft_create_tab(char **strs, const char *s, char c)
+char	**ft_split(char const *str, char c)
 {
-	size_t	start;
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	while (s[i])
-	{
-		while (s[i] == c)
-			i++;
-		start = i;
-		while (s[i] && s[i] != c)
-			i++;
-		if (i > start)
-		{
-			strs[j] = ft_substr(s, start, i - start);
-			j++;
-		}
-	}
-	strs[j] = NULL;
-}
-
-char	**ft_split(char const *s, char c)
-{
-	size_t	word_count;
-	size_t	i;
 	char	**strs;
+	int		word_count;
+	int		i;
+	int		j;
 
-	i = 0;
-	word_count = ft_word_count(s, c);
-	strs = (char **)malloc((word_count + 1) * sizeof(char *));
+	if (!str)
+		return (NULL);
+	word_count = ft_word_count(str, c);
+	strs = (char **)malloc(sizeof(char *) * (word_count + 1));
 	if (!strs)
 		return (NULL);
-	ft_create_tab(strs, s, c);
-	while (strs[i])
+	i = 0;
+	j = 0;
+	while (j < word_count)
 	{
-		if (!strs[i])
-		{
-			ft_free_tab(strs);
-			return (NULL);
-		}
-		i++;
+		i = next_word(str, c, i);
+		strs[j] = ft_substr(str, i, next_sep(str, c, i) - i);
+		if (!strs[j])
+			return (ft_free_tab(strs));
+		i = next_sep(str, c, i);
+		j++;
 	}
+	strs[j] = NULL;
 	return (strs);
 }

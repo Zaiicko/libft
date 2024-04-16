@@ -1,32 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 23:09:41 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/04/15 18:17:09 by zaiicko          ###   ########.fr       */
+/*   Created: 2024/04/13 19:41:18 by zaiicko           #+#    #+#             */
+/*   Updated: 2024/04/15 20:21:30 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
-{
-	size_t	i;
-	char	*str;
-
-	if (!s || !f)
-		return (NULL);
-	i = 0;
-	str = ft_strdup(s);
-	if (!str)
-		return (NULL);
-	while (s[i])
-	{
-		str[i] = f(i, s[i]);
-		i++;
-	}
-	return (str);
-}
+// t_list *ft_lstnew(void *content)
+// {	
+// }
