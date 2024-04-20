@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:22:12 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/04/17 00:42:27 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/04/21 00:37:41 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+char	**ft_free_tab(char **tab);
 
 typedef struct s_list
 {

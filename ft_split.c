@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 22:25:52 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/04/13 17:48:18 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/04/21 00:37:22 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,6 @@ static int	next_sep(char const *str, char c, int i)
 	while (str[i] && str[i] != c)
 		i++;
 	return (i);
-}
-
-static char	**ft_free_tab(char **tab)
-{
-	int	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
-	return (NULL);
 }
 
 static	size_t	ft_word_count(char const *s, char c)
