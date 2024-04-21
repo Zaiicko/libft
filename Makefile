@@ -37,6 +37,7 @@ SRCS =	ft_toupper.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 		ft_free_tab.c \
+		ft_intlen.c \
 
 SRCS_BONUS =	ft_lstnew.c \
 				ft_lstadd_front.c \

@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/01 17:57:20 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/04/21 03:47:58 by zaiicko          ###   ########.fr       */
+/*   Created: 2024/04/21 03:44:05 by zaiicko           #+#    #+#             */
+/*   Updated: 2024/04/21 03:47:40 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+size_t ft_intlen(int nb)
 {
-	size_t		i;
-	char		*str;
-	long int	nb;
+	size_t i;
 
-	i = ft_intlen(n);
-	nb = n;
-	if (n < 0)
+	if (nb == 0)
+		return (1);
+	i = 0;
+	while (nb)
 	{
-		nb *= -1;
+		nb /= 10;
 		i++;
 	}
-	str = (char *)ft_calloc(i + 1, sizeof(char));
-	if (!str)
-		return (NULL);
-	str[i] = 0;
-	while (i > 0)
-	{
-		i--;
-		str[i] = (nb % 10) + '0';
-		nb /= 10;
-	}
-	if (n < 0)
-		str[i] = '-';
-	return (str);
+	return (i);	
 }
