@@ -52,12 +52,17 @@ SRCS_BONUS =	ft_lstnew.c \
 OBJ = $(SRCS:.c=.o)
 OBJ_BONUS = $(SRCS_BONUS:.c=.o)
 
+BLACK = \033[30m
+RESET = \033[0m
+BOLD = \033[1m
+GREEN = \033[32m
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@progress=0; \
 	for file in $(OBJ); do \
-		printf "[%d%%]\033[K" $$progress; \
+		printf "$(BOLD)[%d%%]$(BLACK)\033[K$(RESET)" $$progress; \
 		if [ $$progress -lt 100 ]; then \
 			progress=$$((progress + 170 / $(words $(OBJ)))) && progress=$$((progress > 100 ? 100 : progress)); \
 		fi; \
@@ -65,7 +70,7 @@ $(NAME): $(OBJ)
 		printf "\r\033[K"; \
 	done
 	@ar rcs $(NAME) $(OBJ)
-	@echo "Compilation successful! | 🔻"
+	@echo "$(BOLD)$(GREEN)Compilation successful! | 🔻$(RESET)"
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -75,13 +80,13 @@ bonus: $(OBJ_BONUS)
 
 clean:
 	@rm -f $(OBJ) $(OBJ_BONUS)
-	@echo "Good clean | 🧹🗑️"
+	@echo "$(BLACK)$(BOLD)Good clean | 🧹🗑️ $(RESET)"
 
 fclean:
 	@rm -f $(NAME)
 	@if [ -n "$(OBJ)" ] || [ -n "$(OBJ_BONUS)" ]; then \
 		rm -f $(OBJ) $(OBJ_BONUS); \
-		echo "Big clean | 🧹🗑️"; \
+		echo "$(BLACK)$(BOLD)Big clean | 🧹🗑️ $(RESET)"; \
 	fi
 
 re: fclean all
