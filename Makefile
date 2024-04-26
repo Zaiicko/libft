@@ -55,19 +55,34 @@ OBJ_BONUS = $(SRCS_BONUS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	@progress=0; \
+	for file in $(OBJ); do \
+		printf "[%d%%]\033[K" $$progress; \
+		if [ $$progress -lt 100 ]; then \
+			progress=$$((progress + 170 / $(words $(OBJ)))) && progress=$$((progress > 100 ? 100 : progress)); \
+		fi; \
+		sleep 0.1; \
+		printf "\r\033[K"; \
+	done
+	@ar rcs $(NAME) $(OBJ)
+	@echo "Compilation successful! | 🔻"
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 bonus: $(OBJ_BONUS)
 	ar rcs $(NAME) $(OBJ_BONUS)
 
 clean:
-	rm -f $(OBJ) $(OBJ_BONUS)
+	@rm -f $(OBJ) $(OBJ_BONUS)
+	@echo "Good clean | 🧹🗑️"
 
-fclean: clean
-	rm -f $(NAME)
+fclean:
+	@rm -f $(NAME)
+	@if [ -n "$(OBJ)" ] || [ -n "$(OBJ_BONUS)" ]; then \
+		rm -f $(OBJ) $(OBJ_BONUS); \
+		echo "Big clean | 🧹🗑️"; \
+	fi
 
 re: fclean all
 
