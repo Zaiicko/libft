@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:36:44 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/04/21 00:23:18 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/05/02 03:00:20 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 char	**ft_free_tab(char **tab)
 {
-	size_t i;
+	size_t	i;
+
 	i = 0;
-	while(tab[i])
+	while (tab[i])
 	{
 		free(tab[i]);
 		i++;

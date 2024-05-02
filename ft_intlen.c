@@ -6,15 +6,15 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 03:44:05 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/04/21 03:47:40 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/05/02 03:01:47 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_intlen(int nb)
+size_t	ft_intlen(int nb)
 {
-	size_t i;
+	size_t	i;
 
 	if (nb == 0)
 		return (1);
@@ -24,5 +24,5 @@ size_t ft_intlen(int nb)
 		nb /= 10;
 		i++;
 	}
-	return (i);	
+	return (i);
 }
