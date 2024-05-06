@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:22:12 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/04/21 03:48:23 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/05/07 00:34:17 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	**ft_free_tab(char **tab);
 size_t	ft_intlen(int nb);
+void	ft_putnbr(int nb);
+void	ft_putchar(char c);
 
 typedef struct s_list
 {
