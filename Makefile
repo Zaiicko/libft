@@ -68,7 +68,7 @@ $(NAME): $(OBJ)
 		if [ $$progress -lt 100 ]; then \
 			progress=$$((progress + 170 / $(words $(OBJ)))) && progress=$$((progress > 100 ? 100 : progress)); \
 		fi; \
-		sleep 0.1; \
+		sleep 0.02; \
 		printf "\r\033[K"; \
 	done
 	@ar rcs $(NAME) $(OBJ)
