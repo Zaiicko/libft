@@ -1,6 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/05/22 02:37:49 by zaiicko           #+#    #+#              #
+#    Updated: 2024/05/22 02:37:50 by zaiicko          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
+INC_DIR = inc
+INC = -I$(INC_DIR)
 
 SRCS =	ft_toupper.c \
 		ft_tolower.c \
@@ -40,19 +54,26 @@ SRCS =	ft_toupper.c \
 		ft_intlen.c \
 		ft_putnbr.c \
 		ft_putchar.c \
+		ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
+		ft_printf/ft_checking_f.c \
+		ft_printf/ft_printf.c \
+		ft_printf/ft_putchar_f.c \
+		ft_printf/ft_putnbase.c \
+		ft_printf/ft_putnbr_f.c \
+		ft_printf/ft_putpointer_f.c \
+		ft_printf/ft_putstr_f.c \
+		ft_printf/ft_putun_f.c \
 
-SRCS_BONUS =	ft_lstnew.c \
-				ft_lstadd_front.c \
-				ft_lstsize.c \
-				ft_lstlast.c \
-				ft_lstadd_back.c \
-				ft_lstdelone.c \
-				ft_lstclear.c \
-				ft_lstiter.c \
-				ft_lstmap.c \
-
-OBJ = $(SRCS:.c=.o)
-OBJ_BONUS = $(SRCS_BONUS:.c=.o)
+SRC = $(addprefix srcs/, $(SRCS))
+OBJ = $(SRC:.c=.o)
 
 BLACK = \033[30m
 RESET = \033[0m
@@ -75,22 +96,19 @@ $(NAME): $(OBJ)
 	@echo "$(BOLD)$(GREEN)Compilation successful! | 🔻$(RESET)"
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
-
-bonus: $(OBJ_BONUS)
-	ar rcs $(NAME) $(OBJ_BONUS)
+	@$(CC) $(CFLAGS) -c $< -o $@ $(INC)
 
 clean:
-	@rm -f $(OBJ) $(OBJ_BONUS)
+	@rm -f $(OBJ)
 	@echo "$(BLACK)$(BOLD)Good clean | 🧹🗑️ $(RESET)"
 
 fclean:
 	@rm -f $(NAME)
-	@if [ -n "$(OBJ)" ] || [ -n "$(OBJ_BONUS)" ]; then \
-		rm -f $(OBJ) $(OBJ_BONUS); \
+	@if [ -n "$(OBJ)" ]; then \
+		rm -f $(OBJ); \
 		echo "$(BLACK)$(BOLD)Big clean | 🧹🗑️ $(RESET)"; \
 	fi
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
