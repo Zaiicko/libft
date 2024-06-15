@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 22:25:52 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/04/21 00:37:22 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/06/15 02:08:10 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ static	size_t	ft_word_count(char const *s, char c)
 char	**ft_split(char const *str, char c)
 {
 	char	**strs;
-	int		word_count;
-	int		i;
-	int		j;
+	ssize_t		word_count;
+	ssize_t		i;
+	ssize_t		j;
 
 	if (!str)
 		return (NULL);

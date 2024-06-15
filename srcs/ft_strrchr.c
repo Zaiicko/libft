@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 21:51:49 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/04/09 19:19:07 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/06/15 02:07:47 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	ssize_t	i;
 
 	i = ft_strlen(s);
 	if (c == '\0')
