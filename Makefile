@@ -6,7 +6,7 @@
 #    By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 02:37:49 by zaiicko           #+#    #+#              #
-#    Updated: 2024/05/22 02:37:50 by zaiicko          ###   ########.fr        #
+#    Updated: 2024/06/22 23:43:05 by zaiicko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,6 +71,7 @@ SRCS =	ft_toupper.c \
 		ft_printf/ft_putpointer_f.c \
 		ft_printf/ft_putstr_f.c \
 		ft_printf/ft_putun_f.c \
+		gnl/get_next_line.c \
 
 SRC = $(addprefix srcs/, $(SRCS))
 OBJ = $(SRC:.c=.o)
