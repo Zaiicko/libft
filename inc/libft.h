@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:22:12 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/05/22 02:34:33 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/06/22 23:53:03 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,13 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include "stdarg.h"
-# include "stdio.h"
+# include <stdarg.h>
+# include <stdio.h>
+# include <limits.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 19
+# endif
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -81,5 +86,9 @@ int		ft_putun_f(size_t nb, char *str);
 ssize_t	ft_putnbr_int(ssize_t nb);
 int		ft_putpointer_f(void *ptr, char *str);
 void	ft_putnbase(size_t nb, char *str);
+
+char	*ft_read_and_stack(int fd, char *stash);
+char	*ft_next_line(char *buffer);
+char	*get_next_line(int fd);
 
 #endif
