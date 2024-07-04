@@ -6,7 +6,7 @@
 #    By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 02:37:49 by zaiicko           #+#    #+#              #
-#    Updated: 2024/07/04 19:42:49 by zaiicko          ###   ########.fr        #
+#    Updated: 2024/07/04 20:01:21 by zaiicko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,7 @@ SRC_DIR = srcs
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 PRINTF_DIR = ft_printf
 GNL_DIR = gnl
+RM = rm -rf
 
 BLACK = \033[30m
 RESET = \033[0m
@@ -108,14 +109,14 @@ $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)/$(GNL_DIR)
 
 clean:
-	@rm -rf $(OBJ_DIR)
+	@$(RM) $(OBJ_DIR)
 	@echo "$(BLACK)$(BOLD)Good clean | 🧹🗑️ $(RESET)"
 
 fclean:
-	@rm -rf $(OBJ_DIR)
-	@rm -rf $(NAME)
+	@$(RM) $(OBJ_DIR)
+	@$(RM) $(NAME)
 	@if [ -n "$(OBJ)" ]; then \
-		rm -f $(OBJ); \
+		$(RM) $(OBJ); \
 		echo "$(BLACK)$(BOLD)Big clean | 🧹🗑️ $(RESET)"; \
 	fi
 
