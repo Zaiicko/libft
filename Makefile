@@ -6,7 +6,7 @@
 #    By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 02:37:49 by zaiicko           #+#    #+#              #
-#    Updated: 2024/07/04 12:24:11 by zaiicko          ###   ########.fr        #
+#    Updated: 2024/07/04 19:42:49 by zaiicko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 INC_DIR = inc
+OBJ_DIR = obj
 INC = -I$(INC_DIR)
 
 SRCS =	ft_toupper.c \
@@ -73,8 +74,11 @@ SRCS =	ft_toupper.c \
 		ft_printf/ft_putun_f.c \
 		gnl/get_next_line.c \
 
-SRC = $(addprefix srcs/, $(SRCS))
-OBJ = $(SRC:.c=.o)
+SRC = $(addprefix $(SRC_DIR)/, $(SRCS))
+SRC_DIR = srcs
+OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+PRINTF_DIR = ft_printf
+GNL_DIR = gnl
 
 BLACK = \033[30m
 RESET = \033[0m
@@ -96,15 +100,20 @@ $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
 	@echo "$(BOLD)$(GREEN)Compilation successful! | 🔻$(RESET)"
 
-%.o: %.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@ $(INC)
 
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)/$(PRINTF_DIR)
+	@mkdir -p $(OBJ_DIR)/$(GNL_DIR)
+
 clean:
-	@rm -f $(OBJ)
+	@rm -rf $(OBJ_DIR)
 	@echo "$(BLACK)$(BOLD)Good clean | 🧹🗑️ $(RESET)"
 
 fclean:
-	@rm -f $(NAME)
+	@rm -rf $(OBJ_DIR)
+	@rm -rf $(NAME)
 	@if [ -n "$(OBJ)" ]; then \
 		rm -f $(OBJ); \
 		echo "$(BLACK)$(BOLD)Big clean | 🧹🗑️ $(RESET)"; \
