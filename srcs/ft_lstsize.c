@@ -6,11 +6,11 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:10:16 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/04/16 20:02:33 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/06 22:02:16 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 int	ft_lstsize(t_list *lst)
 {

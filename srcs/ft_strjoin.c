@@ -6,11 +6,11 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 19:22:23 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/04/15 18:01:41 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/06 22:03:13 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zaiicko <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:03:00 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/03/21 08:40:29 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/06 22:01:29 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
+#include "../inc/libft.h"
 
 int	ft_isascii(int c)
 {

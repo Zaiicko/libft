@@ -6,11 +6,11 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 03:40:19 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/05/22 02:33:43 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/06 21:59:46 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../inc/libft.h"
 
 int	ft_printf(const char *str, ...)
 {

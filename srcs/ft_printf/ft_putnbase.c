@@ -6,11 +6,11 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 02:14:17 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/05/22 02:24:03 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/06 21:59:54 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../inc/libft.h"
 
 void	ft_putnbase(size_t nb, char *str)
 {

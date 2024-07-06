@@ -6,11 +6,11 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 23:36:44 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/05/02 03:00:20 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/06 22:01:09 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 char	**ft_free_tab(char **tab)
 {

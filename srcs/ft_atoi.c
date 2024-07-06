@@ -6,11 +6,11 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 21:28:29 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/04/18 00:56:35 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/06 22:01:01 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 static int	check_overflow(int signe)
 {

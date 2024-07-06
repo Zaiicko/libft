@@ -6,11 +6,11 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 22:25:52 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/06/22 23:53:27 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/06 22:02:56 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 static int	next_word(char const *str, char c, int i)
 {

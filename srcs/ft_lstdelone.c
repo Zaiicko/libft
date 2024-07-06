@@ -6,11 +6,11 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 20:42:34 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/04/16 22:05:09 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/06 22:01:59 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {

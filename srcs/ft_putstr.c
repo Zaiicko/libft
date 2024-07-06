@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putpointer_f.c                                  :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 20:54:28 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/07/06 22:00:01 by zaiicko          ###   ########.fr       */
+/*   Created: 2024/07/06 21:49:42 by zaiicko           #+#    #+#             */
+/*   Updated: 2024/07/06 21:57:43 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "../inc/libft.h"
 
-int	ft_putpointer_f(void *ptr, char *str)
+void	ft_putstr(char *str)
 {
-	size_t	nb;
-	size_t	i;
-	int		base;
-
 	if (!str)
-		return (0);
-	if (!ptr)
-		return (ft_putstr_f("0x0"));
-	nb = (size_t)ptr;
-	base = ft_strlen(str);
-	i = ft_putstr_f("0x");
-	ft_putnbase(nb, str);
-	while (nb > 0)
+		return ;
+	while (*str)
 	{
-		nb = nb / base;
-		i++;
+		ft_putchar(*str);
+		str++;
 	}
-	return (i);
 }

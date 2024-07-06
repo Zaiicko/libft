@@ -6,11 +6,11 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 17:57:20 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/04/21 03:47:58 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/06 22:01:40 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 char	*ft_itoa(int n)
 {

@@ -6,11 +6,11 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 02:00:58 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/05/22 02:33:51 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/06 21:59:31 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../inc/libft.h"
 
 size_t	ft_checking_f(va_list *arg, char c)
 {

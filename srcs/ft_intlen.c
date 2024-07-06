@@ -6,11 +6,11 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 03:44:05 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/05/02 03:01:47 by zaiicko          ###   ########.fr       */
+/*   Updated: 2024/07/06 22:01:11 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 size_t	ft_intlen(int nb)
 {
