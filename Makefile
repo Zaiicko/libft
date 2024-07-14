@@ -6,7 +6,7 @@
 #    By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 02:37:49 by zaiicko           #+#    #+#              #
-#    Updated: 2024/07/04 20:01:21 by zaiicko          ###   ########.fr        #
+#    Updated: 2024/07/14 23:07:12 by zaiicko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,25 +81,38 @@ PRINTF_DIR = ft_printf
 GNL_DIR = gnl
 RM = rm -rf
 
-BLACK = \033[30m
+RED = \033[31m
+YELLOW = \033[93m
+GREEN = \033[32m
 RESET = \033[0m
 BOLD = \033[1m
-GREEN = \033[32m
+
+SPINNERS = "🔄 🔁 🔃 🔄 🔁 🔃"
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@progress=0; \
+	@total=$(words $(OBJ)); \
+	count=0; \
 	for file in $(OBJ); do \
-		printf "$(BOLD)[%d%%]$(BLACK)\033[K$(RESET)" $$progress; \
-		if [ $$progress -lt 100 ]; then \
-			progress=$$((progress + 170 / $(words $(OBJ)))) && progress=$$((progress > 100 ? 100 : progress)); \
+		src_file=$$(echo $$file | sed 's/$(OBJ_DIR)/$(SRC_DIR)/' | sed 's/\.o$$/\.c/'); \
+		$(CC) $(CFLAGS) -c $$src_file -o $$file $(INC); \
+		count=$$((count + 1)); \
+		percentage=$$((count * 100 / total)); \
+		progress=$$((percentage / 2)); \
+		spinner=$$(echo $(SPINNERS) | cut -d ' ' -f $$(($$count % 6 + 1))); \
+		bar=""; \
+		for i in $$(seq 1 $$progress); do bar="$${bar}█"; done; \
+		for i in $$(seq $$progress 49); do bar="$${bar}░"; done; \
+		if [ $$percentage -eq 100 ]; then \
+			bar="███████████████████████████████████████████████████"; \
 		fi; \
-		sleep 0.02; \
-		printf "\r\033[K"; \
-	done
-	@ar rcs $(NAME) $(OBJ)
-	@echo "$(BOLD)$(GREEN)Compilation successful! | 🔻$(RESET)"
+		printf "\r$(BOLD)$(YELLOW)Compiling : $${bar} $(RESET)$(BOLD)%d%% $${spinner}$(RESET)" $$percentage; \
+		sleep 0.01; \
+	done; \
+	printf "\n"; \
+	ar rcs $(NAME) $(OBJ)
+	@echo "\n$(BOLD)$(GREEN)Compilation successful! 🔻$(RESET)"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@ $(INC)
@@ -110,14 +123,14 @@ $(OBJ_DIR):
 
 clean:
 	@$(RM) $(OBJ_DIR)
-	@echo "$(BLACK)$(BOLD)Good clean | 🧹🗑️ $(RESET)"
+	@echo "$(BOLD)Good clean | 🧹🗑️ $(RESET)"
 
 fclean:
 	@$(RM) $(OBJ_DIR)
 	@$(RM) $(NAME)
 	@if [ -n "$(OBJ)" ]; then \
 		$(RM) $(OBJ); \
-		echo "$(BLACK)$(BOLD)Big clean | 🧹🗑️ $(RESET)"; \
+		echo "$(BOLD)Big clean | 🧹🗑️ $(RESET)"; \
 	fi
 
 re: fclean all
