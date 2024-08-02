@@ -74,7 +74,7 @@
 Here is an example of using `libft` in a C program:
 
 ```c
-#include "libft.h"
+#include "inc/libft.h"
 
 int main()
 {
