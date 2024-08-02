@@ -81,3 +81,8 @@ int main()
     // YOUR CODE
     return 0;
 }
+```
+
+## Screenshot
+
+<img width="214" alt="Capture d’écran 2024-08-02 à 03 04 46" src="https://github.com/user-attachments/assets/b0674551-825d-487c-b38c-0679b810518a">
