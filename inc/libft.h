@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:22:12 by zaiicko           #+#    #+#             */
-/*   Updated: 2024/09/17 16:32:55 by zaiicko          ###   ########.fr       */
+/*   Updated: 2025/04/27 20:43:16 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 #  define BUFFER_SIZE 19
 # endif
 
+int		ft_isquote(char c);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
