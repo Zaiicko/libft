@@ -6,7 +6,7 @@
 /*   By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:22:12 by zaiicko           #+#    #+#             */
-/*   Updated: 2025/04/27 20:43:16 by zaiicko          ###   ########.fr       */
+/*   Updated: 2025/05/12 01:24:01 by zaiicko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,7 @@ void	ft_putnbase(size_t nb, char *str);
 char	*ft_read_and_stack(int fd, char *stash);
 char	*ft_next_line(char *buffer);
 char	*get_next_line(int fd);
+
+void	ft_print_exit(char *msg);
 
 #endif
