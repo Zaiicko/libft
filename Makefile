@@ -6,7 +6,7 @@
 #    By: zaiicko <meskrabe@student.s19.be>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 02:37:49 by zaiicko           #+#    #+#              #
-#    Updated: 2025/04/27 20:43:31 by zaiicko          ###   ########.fr        #
+#    Updated: 2025/05/11 23:33:52 by zaiicko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,6 +74,7 @@ SRCS =	ft_toupper.c \
 		ft_printf/ft_putun_f.c \
 		gnl/get_next_line.c \
 		ft_isquote.c \
+		ft_print_exit.c \ 
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRCS))
 SRC_DIR = srcs
